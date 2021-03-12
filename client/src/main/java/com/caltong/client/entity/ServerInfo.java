@@ -6,5 +6,4 @@ import lombok.Data;
 public class ServerInfo {
     private Name name;
     private CPU cpu;
-
 }

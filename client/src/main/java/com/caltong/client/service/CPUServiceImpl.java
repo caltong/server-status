@@ -10,8 +10,6 @@ import javax.annotation.Resource;
 @Service
 public class CPUServiceImpl implements CPUService {
 
-    @Resource
-    Info info;
 
     @Override
     public double getCurrentLoad() {

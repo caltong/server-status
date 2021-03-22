@@ -7,5 +7,5 @@ import lombok.ToString;
 public class ServerInfo {
     private Name name;
     private CPU cpu;
-
+    private Memory memory;
 }

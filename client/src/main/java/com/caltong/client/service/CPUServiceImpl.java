@@ -1,11 +1,9 @@
 package com.caltong.client.service;
 
-import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Service;
 import oshi.SystemInfo;
 import oshi.hardware.CentralProcessor;
 
-import javax.annotation.Resource;
 
 @Service
 public class CPUServiceImpl implements CPUService {

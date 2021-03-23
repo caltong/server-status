@@ -3,6 +3,7 @@ package com.caltong.client.service;
 import org.springframework.stereotype.Service;
 import oshi.SystemInfo;
 import oshi.hardware.CentralProcessor;
+import oshi.hardware.Sensors;
 
 
 @Service
@@ -58,6 +59,8 @@ public class CPUServiceImpl implements CPUService {
 
     @Override
     public double getCurrentTemperature() {
-        return 0;
+        SystemInfo systemInfo = new SystemInfo();
+        Sensors sensors = systemInfo.getHardware().getSensors();
+        return sensors.getCpuTemperature();
     }
 }

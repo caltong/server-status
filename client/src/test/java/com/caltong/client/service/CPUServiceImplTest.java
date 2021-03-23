@@ -43,5 +43,7 @@ class CPUServiceImplTest {
 
     @Test
     void getCurrentTemperature() {
+        double currentTemperature = cpuService.getCurrentTemperature();
+        System.out.println(currentTemperature);
     }
 }

@@ -1,9 +1,6 @@
 package com.caltong.client.service;
 
-import com.caltong.client.entity.CPU;
-import com.caltong.client.entity.Memory;
-import com.caltong.client.entity.Name;
-import com.caltong.client.entity.ServerInfo;
+import com.caltong.client.entity.*;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -17,6 +14,8 @@ public class InfoReadServiceImpl implements InfoReadService {
     @Resource
     MemoryService memoryService;
     @Resource
+    DiskService diskService;
+    @Resource
     Name name;
 
     @Override
@@ -29,7 +28,7 @@ public class InfoReadServiceImpl implements InfoReadService {
         cpu.setAverageLoad1(cpuService.getAverageLoad1());
         cpu.setAverageLoad5(cpuService.getAverageLoad5());
         cpu.setAverageLoad15(cpuService.getAverageLoad15());
-        cpu.setCurrentTemperature(-1.0);
+        cpu.setCurrentTemperature(cpuService.getCurrentTemperature());
         cpu.setTime(new Date());
         serverInfo.setCpu(cpu);
         //读取内存信息
@@ -38,6 +37,13 @@ public class InfoReadServiceImpl implements InfoReadService {
         memory.setAvailable(memoryService.getAvailable());
         memory.setTime(new Date());
         serverInfo.setMemory(memory);
+        //读取硬盘信息
+        Disk disk = new Disk();
+        disk.setTotal(diskService.getTotal());
+        disk.setAvailable(diskService.getAvailable());
+        disk.setTime(new Date());
+        //读取网络信息
+
         //读取Name配置文件
         serverInfo.setName(name);
 

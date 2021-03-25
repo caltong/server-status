@@ -1,14 +1,10 @@
 package com.caltong.server.service;
 
-import com.caltong.server.entity.CPU;
-import com.caltong.server.entity.Memory;
-import com.caltong.server.entity.Name;
-import com.caltong.server.entity.ServerInfo;
-import com.caltong.server.mapper.CPUMapper;
-import com.caltong.server.mapper.MemoryMapper;
-import com.caltong.server.mapper.NameMapper;
+import com.caltong.server.entity.*;
+import com.caltong.server.mapper.*;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import sun.nio.ch.Net;
 
 import javax.annotation.Resource;
 import javax.xml.crypto.Data;
@@ -24,6 +20,10 @@ public class InfoWriteServiceImpl implements InfoWriteService {
     CPUMapper cpuMapper;
     @Resource
     MemoryMapper memoryMapper;
+    @Resource
+    DiskMapper diskMapper;
+    @Resource
+    NetworkMapper networkMapper;
 
     @Override
     @Transactional
@@ -49,6 +49,20 @@ public class InfoWriteServiceImpl implements InfoWriteService {
                 memory.setTime(new Date());
             }
             memoryMapper.insert(memory);
+            //设置disk
+            Disk disk = serverInfo.getDisk();
+            disk.setId(name.getId());
+            if (disk.getTime() == null) {
+                disk.setTime(new Date());
+            }
+            diskMapper.insert(disk);
+            //设置network
+            Network network = serverInfo.getNetwork();
+            network.setId(name.getId());
+            if (network.getTime() == null) {
+                network.setTime(new Date());
+            }
+            networkMapper.insert(network);
         }
     }
 }

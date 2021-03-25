@@ -16,7 +16,7 @@ public class InfoGetController {
 
     @GetMapping("info")
     public ResponseEntity<List<ServerInfo>> getByName(Integer id) {
-        List<ServerInfo> serverInfoList = infoReadServiceImpl.readServerInfoByServerId(id, 1, 5);
+        List<ServerInfo> serverInfoList = infoReadServiceImpl.readServerInfoByServerId(id, 1, 3);
         return ResponseEntity.ok(serverInfoList);
     }
 }

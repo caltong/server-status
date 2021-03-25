@@ -17,7 +17,7 @@ class InfoReadServiceImplTest {
 
     @Test
     void readServerInfoByServerId() {
-        List<ServerInfo> serverInfoList = infoReadService.readServerInfoByServerId(1, 1, 3);
+        List<ServerInfo> serverInfoList = infoReadService.readServerInfoByServerId(12, 1, 3);
         for (ServerInfo serverInfo : serverInfoList) {
             System.out.println(serverInfo.toString());
         }

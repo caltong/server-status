@@ -23,7 +23,7 @@ public class InfoPushServiceImpl implements InfoPushService {
     String url;
 
     @Override
-//    @Scheduled(cron = "0/10 * * * * *")
+    @Scheduled(cron = "0/10 * * * * *")
     public void pushInfo2Server() {
         ServerInfo serverInfo = infoReadService.readServerInfo();
         System.out.println(serverInfo);

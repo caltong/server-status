@@ -18,7 +18,7 @@ public class NetworkServiceImpl implements NetworkService {
             in += networkIF.getBytesRecv() / 1024.0;
         }
         try {
-            Thread.sleep(100);
+            Thread.sleep(1000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
@@ -27,7 +27,7 @@ public class NetworkServiceImpl implements NetworkService {
         for (NetworkIF networkIF : networkIFs) {
             in2 += networkIF.getBytesRecv() / 1024.0;
         }
-        return (in2 - in) / 0.1;
+        return (in2 - in) / 8;
     }
 
     @Override
@@ -38,7 +38,7 @@ public class NetworkServiceImpl implements NetworkService {
             out += networkIF.getBytesSent() / 1024.0;
         }
         try {
-            Thread.sleep(100);
+            Thread.sleep(1000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
@@ -47,6 +47,6 @@ public class NetworkServiceImpl implements NetworkService {
         for (NetworkIF networkIF : networkIFs) {
             out2 += networkIF.getBytesSent() / 1024.0;
         }
-        return (out2 - out) / 0.1;
+        return (out2 - out) / 8;
     }
 }

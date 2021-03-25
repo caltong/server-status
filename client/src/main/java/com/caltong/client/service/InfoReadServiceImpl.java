@@ -4,6 +4,7 @@ import com.caltong.client.entity.*;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import javax.xml.crypto.Data;
 import java.util.Date;
 
 @Service
@@ -15,6 +16,8 @@ public class InfoReadServiceImpl implements InfoReadService {
     MemoryService memoryService;
     @Resource
     DiskService diskService;
+    @Resource
+    NetworkService networkService;
     @Resource
     Name name;
 
@@ -42,8 +45,13 @@ public class InfoReadServiceImpl implements InfoReadService {
         disk.setTotal(diskService.getTotal());
         disk.setAvailable(diskService.getAvailable());
         disk.setTime(new Date());
+        serverInfo.setDisk(disk);
         //读取网络信息
-
+        Network network = new Network();
+        network.setIn(networkService.getIn());
+        network.setOut(networkService.getOut());
+        network.setTime(new Date());
+        serverInfo.setNetwork(network);
         //读取Name配置文件
         serverInfo.setName(name);
 

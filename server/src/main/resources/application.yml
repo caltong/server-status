@@ -1,7 +1,7 @@
 spring:
   datasource:
-    name: server-status
-    url: jdbc:mysql://127.0.0.1:3306/server-status?serverTimezone=Asia/Shanghai
+    name: server_status
+    url: jdbc:mysql://127.0.0.1:3306/server_status?serverTimezone=Asia/Shanghai
     username: root
     password: 123456
     # 使用druid数据源

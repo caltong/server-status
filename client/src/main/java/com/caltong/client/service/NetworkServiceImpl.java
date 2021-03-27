@@ -27,7 +27,7 @@ public class NetworkServiceImpl implements NetworkService {
         for (NetworkIF networkIF : networkIFs) {
             in2 += networkIF.getBytesRecv() / 1024.0;
         }
-        return (in2 - in) / 8;
+        return (in2 - in);
     }
 
     @Override
@@ -47,6 +47,6 @@ public class NetworkServiceImpl implements NetworkService {
         for (NetworkIF networkIF : networkIFs) {
             out2 += networkIF.getBytesSent() / 1024.0;
         }
-        return (out2 - out) / 8;
+        return (out2 - out);
     }
 }

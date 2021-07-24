@@ -1,5 +1,6 @@
 package com.caltong.server.controller;
 
+import com.caltong.server.entity.Name;
 import com.caltong.server.entity.ServerInfo;
 import com.caltong.server.service.InfoReadService;
 import org.springframework.http.ResponseEntity;
@@ -20,5 +21,11 @@ public class InfoGetController {
     public ResponseEntity<List<ServerInfo>> getByName(Integer id) {
         List<ServerInfo> serverInfoList = infoReadServiceImpl.readServerInfoByServerId(id, 1, 3);
         return ResponseEntity.ok(serverInfoList);
+    }
+
+    @GetMapping("name")
+    public ResponseEntity<List<Name>> getAllName() {
+        List<Name> nameList = infoReadServiceImpl.readAllName(1, 5);
+        return ResponseEntity.ok(nameList);
     }
 }

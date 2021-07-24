@@ -24,5 +24,5 @@ public interface NameMapper {
 
     List<Name> selectByName(@Param("name") String name);
 
-
+    List<Name> selectOrderById();
 }

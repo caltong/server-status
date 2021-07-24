@@ -47,4 +47,12 @@ public class InfoReadServiceImpl implements InfoReadService {
         }
         return serverInfoList;
     }
+
+    @Override
+    public List<Name> readAllName(Integer startPage, Integer count) {
+        PageHelper.startPage(startPage, count);
+        return nameMapper.selectOrderById();
+    }
+
+
 }

@@ -17,7 +17,6 @@ import javax.annotation.Resource;
 @Service
 @EnableScheduling
 public class InfoPushServiceImpl implements InfoPushService {
-
     @Resource
     InfoReadService infoReadService;
 
@@ -25,7 +24,7 @@ public class InfoPushServiceImpl implements InfoPushService {
     String url;
 
     @Override
-    @Scheduled(cron = "0/10 * * * * *")
+    @Scheduled(cron = "${server.cron}")
     public void pushInfo2Server() {
         ServerInfo serverInfo = infoReadService.readServerInfo();
         System.out.println(serverInfo);

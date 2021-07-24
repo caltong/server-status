@@ -28,6 +28,7 @@ public class InfoWriteServiceImpl implements InfoWriteService {
     @Override
     @Transactional
     public void writeServerInfo(ServerInfo serverInfo) {
+        System.out.println("try to inset serverInfo: " + serverInfo.toString());
         List<Name> nameList = nameMapper.selectByName(serverInfo.getName().getName());
         if (nameList.size() == 0) {
             nameMapper.insert(serverInfo.getName());

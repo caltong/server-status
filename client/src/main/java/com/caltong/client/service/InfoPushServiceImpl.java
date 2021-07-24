@@ -10,6 +10,8 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import javax.annotation.Resource;
 
@@ -26,11 +28,13 @@ public class InfoPushServiceImpl implements InfoPushService {
     @Override
     @Scheduled(cron = "${server.cron}")
     public void pushInfo2Server() {
+        Logger logger = LoggerFactory.getLogger(getClass());
+        logger.info("start push info");
         ServerInfo serverInfo = infoReadService.readServerInfo();
-        System.out.println(serverInfo);
+        logger.info(serverInfo.toString());
         RestTemplate restTemplate = new RestTemplate();
         ResponseEntity<String> stringResponseEntity = restTemplate.postForEntity(url, serverInfo, String.class);
         String body = stringResponseEntity.getBody();
-        System.out.println(body);
+        logger.info("push api response: " + body);
     }
 }

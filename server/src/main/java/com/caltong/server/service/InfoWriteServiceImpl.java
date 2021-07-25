@@ -2,6 +2,8 @@ package com.caltong.server.service;
 
 import com.caltong.server.entity.*;
 import com.caltong.server.mapper.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import sun.nio.ch.Net;
@@ -28,7 +30,8 @@ public class InfoWriteServiceImpl implements InfoWriteService {
     @Override
     @Transactional
     public void writeServerInfo(ServerInfo serverInfo) {
-        System.out.println("try to inset serverInfo: " + serverInfo.toString());
+        Logger logger = LoggerFactory.getLogger(getClass());
+        logger.info("try to insert serverInfo: "+serverInfo.toString());
         List<Name> nameList = nameMapper.selectByName(serverInfo.getName().getName());
         if (nameList.size() == 0) {
             nameMapper.insert(serverInfo.getName());

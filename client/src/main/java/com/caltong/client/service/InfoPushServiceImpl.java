@@ -15,7 +15,6 @@ import org.slf4j.LoggerFactory;
 
 import javax.annotation.Resource;
 
-@Profile({"production"})
 @Service
 @EnableScheduling
 public class InfoPushServiceImpl implements InfoPushService {

@@ -18,8 +18,8 @@ public class InfoGetController {
     InfoReadService infoReadServiceImpl;
 
     @GetMapping("info")
-    public ResponseEntity<List<ServerInfo>> getByName(Integer id) {
-        List<ServerInfo> serverInfoList = infoReadServiceImpl.readServerInfoByServerId(id, 1, 3);
+    public ResponseEntity<List<ServerInfo>> getByName(Integer id, Integer startPage, Integer count) {
+        List<ServerInfo> serverInfoList = infoReadServiceImpl.readServerInfoByServerId(id, startPage, count);
         return ResponseEntity.ok(serverInfoList);
     }
 

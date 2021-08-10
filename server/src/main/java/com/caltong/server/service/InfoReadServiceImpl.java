@@ -54,5 +54,29 @@ public class InfoReadServiceImpl implements InfoReadService {
         return nameMapper.selectOrderById();
     }
 
+    @Override
+    public List<CPU> readCPUInfoById(Integer id, Integer startPage, Integer count) {
+        PageHelper.startPage(startPage, count);
+        return cpuMapper.selectAllByIdOrderByTimeDesc(id);
+    }
+
+    @Override
+    public List<Disk> readDiskInfoById(Integer id, Integer startPage, Integer count) {
+        PageHelper.startPage(startPage, count);
+        return diskMapper.selectAllByIdOrderByTimeDesc(id);
+    }
+
+    @Override
+    public List<Memory> readMemoryInfoById(Integer id, Integer startPage, Integer count) {
+        PageHelper.startPage(startPage, count);
+        return memoryMapper.selectAllByIdOrderByTimeDesc(id);
+    }
+
+    @Override
+    public List<Network> readNetworkInfoById(Integer id, Integer startPage, Integer count) {
+        PageHelper.startPage(startPage, count);
+        return networkMapper.selectAllByIdOrderByTimeDesc(id);
+    }
+
 
 }

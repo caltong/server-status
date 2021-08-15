@@ -1,6 +1,6 @@
 package com.caltong.server.service;
 
-import com.caltong.server.entity.*;
+import entity.*;
 
 import java.util.List;
 

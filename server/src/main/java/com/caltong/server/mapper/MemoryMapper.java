@@ -2,7 +2,7 @@ package com.caltong.server.mapper;
 
 import org.apache.ibatis.annotations.Param;
 
-import com.caltong.server.entity.Memory;
+import entity.Memory;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;

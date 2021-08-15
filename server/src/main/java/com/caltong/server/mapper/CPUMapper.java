@@ -3,7 +3,7 @@ package com.caltong.server.mapper;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
-import com.caltong.server.entity.CPU;
+import entity.CPU;
 
 import java.util.List;
 

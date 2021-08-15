@@ -1,5 +1,6 @@
 package com.caltong.client.entity;
 
+import entity.Name;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 

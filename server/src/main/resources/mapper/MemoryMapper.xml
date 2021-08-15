@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.caltong.server.mapper.MemoryMapper">
-  <resultMap id="BaseResultMap" type="com.caltong.server.entity.Memory">
+  <resultMap id="BaseResultMap" type="entity.Memory">
     <!--@mbg.generated-->
     <!--@Table memory-->
     <id column="inc_id" jdbcType="INTEGER" property="incId" />
@@ -19,7 +19,7 @@
     delete from memory
     where inc_id = #{incId,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" keyColumn="inc_id" keyProperty="incId" parameterType="com.caltong.server.entity.Memory" useGeneratedKeys="true">
+  <insert id="insert" keyColumn="inc_id" keyProperty="incId" parameterType="entity.Memory" useGeneratedKeys="true">
     <!--@mbg.generated-->
     insert into memory (id, total, available, 
       `time`)

@@ -1,4 +1,4 @@
-package com.caltong.client.entity;
+package entity;
 
 import lombok.Data;
 

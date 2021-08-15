@@ -5,7 +5,7 @@ import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
-import com.caltong.server.entity.Name;
+import entity.Name;
 import org.springframework.stereotype.Repository;
 
 @Mapper

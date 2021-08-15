@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.caltong.server.mapper.NetworkMapper">
-  <resultMap id="BaseResultMap" type="com.caltong.server.entity.Network">
+  <resultMap id="BaseResultMap" type="entity.Network">
     <!--@mbg.generated-->
     <!--@Table network-->
     <id column="inc_id" jdbcType="INTEGER" property="incId" />
@@ -19,7 +19,7 @@
     delete from network
     where inc_id = #{incId,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" keyColumn="inc_id" keyProperty="incId" parameterType="com.caltong.server.entity.Network" useGeneratedKeys="true">
+  <insert id="insert" keyColumn="inc_id" keyProperty="incId" parameterType="entity.Network" useGeneratedKeys="true">
     <!--@mbg.generated-->
     insert into network (id, `in`, `out`, `time`
       )

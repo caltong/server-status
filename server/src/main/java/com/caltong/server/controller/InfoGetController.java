@@ -1,6 +1,6 @@
 package com.caltong.server.controller;
 
-import com.caltong.server.entity.*;
+import entity.*;
 import com.caltong.server.service.InfoReadService;
 import org.apache.ibatis.mapping.DatabaseIdProvider;
 import org.springframework.http.ResponseEntity;

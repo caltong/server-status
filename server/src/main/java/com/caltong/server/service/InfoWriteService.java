@@ -1,6 +1,6 @@
 package com.caltong.server.service;
 
-import com.caltong.server.entity.ServerInfo;
+import entity.ServerInfo;
 
 public interface InfoWriteService {
     void writeServerInfo(ServerInfo serverInfo);

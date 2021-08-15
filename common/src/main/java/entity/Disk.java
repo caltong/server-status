@@ -1,7 +1,8 @@
-package com.caltong.server.entity;
+package entity;
+
+import lombok.Data;
 
 import java.util.Date;
-import lombok.Data;
 
 @Data
 public class Disk {

@@ -1,7 +1,7 @@
 package com.caltong.server.controller;
 
 
-import com.caltong.server.entity.ServerInfo;
+import entity.ServerInfo;
 import com.caltong.server.service.InfoWriteService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;

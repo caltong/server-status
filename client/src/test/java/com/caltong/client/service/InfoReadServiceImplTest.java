@@ -1,6 +1,6 @@
 package com.caltong.client.service;
 
-import com.caltong.client.entity.ServerInfo;
+import entity.ServerInfo;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 

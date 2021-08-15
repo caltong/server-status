@@ -1,6 +1,6 @@
 package com.caltong.server.service;
 
-import com.caltong.server.entity.*;
+import entity.*;
 import com.caltong.server.mapper.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

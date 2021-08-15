@@ -1,6 +1,7 @@
 package com.caltong.client.service;
 
-import com.caltong.client.entity.*;
+
+import entity.*;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
